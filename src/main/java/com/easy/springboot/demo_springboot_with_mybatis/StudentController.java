@@ -3,6 +3,7 @@ package com.easy.springboot.demo_springboot_with_mybatis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,7 +14,14 @@ import java.util.List;
 public class StudentController {
     @Autowired
     StudentService studentService;
-    @GetMapping("/studentOps")
+
+
+    @RequestMapping("/")
+    public String welcomePage(){
+        return "studentOps.html";
+    }
+
+    @GetMapping("/studentO")
     public void studentOps(){
 //        Student s1 = new Student();
 //        s1.setAge(3);

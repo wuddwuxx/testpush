@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.easy.springboot.demo_springboot_with_mybatis.Mapper.StudentMapper">
+    <insert id="addStudent" parameterType="com.easy.springboot.demo_springboot_with_mybatis.Student">
+        INSERT  INTO student(name, sex, age) VALUE (#{name},#{sex},#{age})
+    </insert>
+    <delete id="deleteStudentByAge" parameterType="int">
+        DELETE FROM student WHERE age=#{age}
+    </delete>
+    <update id="updateStudentByAge" parameterType="com.easy.springboot.demo_springboot_with_mybatis.Student">
+        UPDATE student set name=#{name},sex=#{sex} WHERE age=#{age}
+    </update>
+    <select id="getStudentByAge" parameterType="int" resultType="com.easy.springboot.demo_springboot_with_mybatis.Student">
+        SELECT * FROM student WHERE age=#{age}
+    </select>
+    <select id="getAllStudents" resultType="com.easy.springboot.demo_springboot_with_mybatis.Student">
+        SELECT * FROM student
+    </select>
+</mapper>

@@ -11,11 +11,14 @@
             <td>学生性别</td>
             <td>学生年龄</td>
         </tr>
-        <!--<tr th:each="student:${students}">-->
-            <!--<td th:text="${student.name}"></td>-->
-            <!--<td th:text="${student.sex}"></td>-->
-            <!--<td th:text="${student.age}"></td>-->
-        <!--</tr>-->
+        <tr th:each="student:${students}">
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.sex}"></td>
+            <td th:text="${student.age}"></td>
+        </tr>
     </table>
+    <form action="/studentOps" method="post">
+        <input type="submit" value="点击">
+    </form>
 </body>
 </html>
